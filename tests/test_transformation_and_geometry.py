@@ -9,8 +9,8 @@ from math import pi
 import numpy as np
 import sympy
 
-from robot_avoidance.model_robot import RobotArm2D, ModelRobot2D
-from robot_avoidance.analytic_evaluation_jacobian import (
+from robot_collision_avoidance.model_robot import RobotArm2D, ModelRobot2D
+from robot_collision_avoidance.analytic_evaluation_jacobian import (
     _get_sympy_transformation_matrix,
 )
 

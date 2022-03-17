@@ -10,19 +10,20 @@ from numpy import linalg as LA
 
 from vartools.dynamical_systems import LinearSystem
 
-from dynamic_obstacle_avoidance.obstacles import Sphere, Cuboid
+from dynamic_obstacle_avoidance.obstacles import Sphere
+from dynamic_obstacle_avoidance.obstacles import CuboidXd as Cuboid
 from dynamic_obstacle_avoidance.containers import ObstacleContainer
 from dynamic_obstacle_avoidance.avoidance import DynamicModulationAvoider
 from dynamic_obstacle_avoidance.visualization import plot_obstacles
 
-from robot_avoidance.robot_arm_avoider import RobotArmAvoider
-from robot_avoidance.model_robot import RobotArm2D
+from robot_collision_avoidance.robot_arm_avoider import RobotArmAvoider
+from robot_collision_avoidance.model_robot import RobotArm2D
 
 
 class TestRobotAvoider(unittest.TestCase):
     def test_evaluation_points(self, visualize=False):
         # Assumption of already created jacobian
-        from robot_avoidance.jacobians.robot_arm_3link import _get_jacobian
+        from robot_collision_avoidance.jacobians.robot_arm_3link import _get_jacobian
 
         my_robot = RobotArm2D(link_lengths=np.array([1, 1, 1]))
         my_robot.name = "robot_arm_3link"
@@ -156,7 +157,7 @@ class TestRobotAvoider(unittest.TestCase):
 
         my_robot.name = "robot_arm_3link"
 
-        from robot_avoidance.jacobians.robot_arm_3link import _get_jacobian
+        from robot_collision_avoidance.jacobians.robot_arm_3link import _get_jacobian
 
         my_robot.set_jacobian(function=_get_jacobian)
 

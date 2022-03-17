@@ -35,9 +35,29 @@ Activate your environment
 source .venv/bin/activate
 ```
 
-# Setup Dependencies
+## Setup Dependencies
 Install all requirements:
 ``` bash
-pip install -r requirements.txt && python setup.py develop
+pip install -r requirements.txt && pip install -e .
 ```
-make sure you also install the submodules (mainly `vartools`)
+
+This module depends on the libraries [vartools](https://github.com/epfl-lasa/dynamic_obstacle_avoidance.git) and [dynamic_obstacle_avoidance](https://github.com/epfl-lasa/dynamic_obstacle_avoidance). Make sure that they re installed.
+
+### Setup Simulator environment 
+First make sure to include following scripts:
+First, make sure to clone [aica-technology/docker-images](https://github.com/aica-technology/docker-images) and install the scripts before you start, as the instructions below rely on those scripts.
+``` bash
+bash docker-images/scripts/install-aica-docker.sh
+```
+
+Then use the simulator, which can be found on:  
+https://github.com/epfl-lasa/simulator-backend/tree/develop/pybullet_ros2
+
+
+Spin up the container with
+
+```console
+aica-docker interactive aica-technology/ros2-simulator:galactic -u ros2
+ros2 launch pybullet_ros2 franka.launch.py
+```
+
