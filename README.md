@@ -47,7 +47,7 @@ This module depends on the libraries [vartools](https://github.com/epfl-lasa/dyn
 First make sure to include following scripts:
 First, make sure to clone [aica-technology/docker-images](https://github.com/aica-technology/docker-images) and install the scripts before you start, as the instructions below rely on those scripts.
 ``` bash
-bash docker-images/scripts/install-aica-docker.sh
+bash scripts/install-aica-docker.sh
 ```
 
 Then use the simulator, which can be found on:  
@@ -60,4 +60,10 @@ Spin up the container with
 aica-docker interactive aica-technology/ros2-simulator:galactic -u ros2
 ros2 launch pybullet_ros2 franka.launch.py
 ```
+
+Run the console with local-access:
+``` bash
+aica-docker interactive aica-technology/ros2-simulator:galactic -u ros2 --net host --no-hostname --ros-domain-id 0
+```
+
 
