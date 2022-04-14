@@ -8,3 +8,5 @@ matplotlib
 # Sympy for automatic calculation of the Jacobian
 sympy
 
+# Robotics toolbox
+roboticstoolbox-python

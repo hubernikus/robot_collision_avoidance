@@ -67,3 +67,13 @@ aica-docker interactive aica-technology/ros2-simulator:galactic -u ros2 --net ho
 ```
 
 
+# Includes the Robotics Toolbox
+see more information on:
+https://github.com/petercorke/robotics-toolbox-python
+
+I had to additionally install to get it run error free
+``` bash
+sudo apt-get install -y libpython3.9-dev
+```
+
+
